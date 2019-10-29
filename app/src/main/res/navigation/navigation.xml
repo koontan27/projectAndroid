@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.calcalculated.mainFragment"
+        android:label="หน้าหลัก">
+        <action
+            android:id="@+id/action_mainFragment_to_inputFragment"
+            app:destination="@id/inputFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="com.example.calcalculated.foodFragment"
+        android:label="รายการอาหาร" >
+        <action
+            android:id="@+id/action_foodFragment_to_foodInsertFragment"
+            app:destination="@id/foodInsertFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inputFragment"
+        android:name="com.example.calcalculated.inputFragment"
+        android:label="มารู้แคลกันเถอะ">
+        <action
+            android:id="@+id/action_inputFragment_to_overViewFragment"
+            app:destination="@id/overViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/overViewFragment"
+        android:name="com.example.calcalculated.overViewFragment"
+        android:label="มารู้แคลกันเถอะ">
+        <action
+            android:id="@+id/action_overViewFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.calcalculated.aboutFragment"
+        android:label="เกี่ยวกับ" />
+    <fragment
+        android:id="@+id/foodInsertFragment"
+        android:name="com.example.calcalculated.foodInsertFragment"
+        android:label="เพิ่มรายการอาหาร" >
+        <action
+            android:id="@+id/action_foodInsertFragment_to_foodFragment"
+            app:destination="@id/foodFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/foodFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

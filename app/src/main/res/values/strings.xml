@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">มารู้แคลกันเถอะ</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="foodList">รายการอาหาร</string>
+    <string name="editProfile">แก้ไขข้อมูลส่วนตัว</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="saveProfile">บันทึกข้อมูล</string>
+    <string name="goMaintext">ไปยังหน้าหลัก</string>
+    <string name="maintext">หน้าหลัก</string>
+    <string name="BMItext">ข้อมูล BMI</string>
+    <string name="inputtext">กรุณาระบุข้อมูลเพื่อคำนวณ BMI</string>
+    <string name="about">เกี่ยวกับ</string>
+    <string name="txtEat1Value">กินไป</string>
+    <string name="txtEat2Value">จากที่ต้องใช้ต่อวัน</string>
+    <string name="txtEatValue">คุณยังกินได้อีก</string>
+    <string name="txtCalTwoValue">1986</string>
+    <string name="txtEatKcal">kcal</string>
+    <string name="txtSubtitle">รายการอาหารที่กินไป</string>
+    <string name="txtFoodNameValue">ข้าวผัดหมู</string>
+    <string name="txtCalValue">557</string>
+    <string name="txtUnitName">kcal</string>
+    <string name="txtDesDelete">deleteBtn</string>
+    <string name="sexTextView">เพศ</string>
+    <string name="oldTextView">อายุ</string>
+    <string name="weightTextView">น้ำหนัก (กิโลกรัม)</string>
+    <string name="heightTextView">ส่วนสูง (เซนติเมตร)</string>
+    <string name="BMRTextView">สรุปข้อมูล BMR ของคุณ</string>
+    <string name="BMITextView">BMI</string>
+    <string name="statusTextView">น้ำหนักอยู่ในเกณฑ์</string>
+    <string name="energyTextView">พลังงานที่ใช้</string>
+    <string name="hint_sex">กรุณาเลือก เพศ</string>
+    <string name="hint_activity">กรุณาเลือก กิจกรรม</string>
+    <string name="deleteBtnValue">ลบข้อมูล</string>
+    <string name="addMenuButtonValue">เพิ่ม</string>
+    <string name="txtDesAdd">เพิ่ม</string>
+    <string name="txtTitleFoodValue">รายการอาหาร</string>
+    <string name="txtTitleInsertFoodValue">กรุณาระบุข้อมูลอาหาร</string>
+    <string name="txtInsertFoodNameValue">ชื่ออาหาร</string>
+    <string name="txtKcal">จำนวนแคลอรี่</string>
+    <string name="saveBtnValue">บันทึก</string>
+</resources>

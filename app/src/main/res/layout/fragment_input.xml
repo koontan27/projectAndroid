@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="84dp"
+            android:fontFamily="@font/roboto_thin"
+            android:text="@string/saveProfile"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="84dp"
+            android:fontFamily="@font/roboto_thin"
+            android:text="@string/deleteBtnValue"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/saveBtn" />
+
+        <TextView
+            android:id="@+id/inputText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:fontFamily="@font/roboto_thin"
+            android:text="@string/inputtext"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sexText"
+            android:layout_width="110dp"
+            android:layout_height="46dp"
+            android:fontFamily="@font/roboto_thin"
+            android:text="@string/sexTextView"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/oldText"
+            app:layout_constraintEnd_toStartOf="@+id/sexList"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputText" />
+
+        <TextView
+            android:id="@+id/oldText"
+            android:layout_width="110dp"
+            android:layout_height="46dp"
+            android:fontFamily="@font/roboto_thin"
+            android:text="@string/oldTextView"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/weightText"
+            app:layout_constraintEnd_toStartOf="@+id/oldEditText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sexText" />
+
+        <TextView
+            android:id="@+id/weightText"
+            android:layout_width="110dp"
+            android:layout_height="46dp"
+            android:fontFamily="@font/roboto_thin"
+            android:text="@string/weightTextView"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/heightText"
+            app:layout_constraintEnd_toStartOf="@+id/weightEditText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/oldText" />
+
+        <TextView
+            android:id="@+id/heightText"
+            android:layout_width="110dp"
+            android:layout_height="46dp"
+            android:fontFamily="@font/roboto_thin"
+            android:text="@string/heightTextView"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/activitiesList"
+            app:layout_constraintEnd_toStartOf="@+id/heightEditText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weightText" />
+
+        <Spinner
+            android:id="@+id/sexList"
+            android:layout_width="119dp"
+            android:layout_height="46dp"
+            android:prompt="@string/hint_sex"
+            android:spinnerMode="dialog"
+            app:layout_constraintBottom_toTopOf="@+id/oldEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sexText"
+            app:layout_constraintTop_toBottomOf="@+id/inputText">
+
+        </Spinner>
+
+        <EditText
+            android:id="@+id/oldEditText"
+            android:layout_width="119dp"
+            android:layout_height="46dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/weightEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/oldText"
+            app:layout_constraintTop_toBottomOf="@+id/sexList" />
+
+        <EditText
+            android:id="@+id/weightEditText"
+            android:layout_width="119dp"
+            android:layout_height="46dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/heightEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/weightText"
+            app:layout_constraintTop_toBottomOf="@+id/oldEditText" />
+
+        <EditText
+            android:id="@+id/heightEditText"
+            android:layout_width="119dp"
+            android:layout_height="46dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/activitiesList"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/heightText"
+            app:layout_constraintTop_toBottomOf="@+id/weightEditText" />
+
+        <Spinner
+            android:id="@+id/activitiesList"
+            android:layout_width="208dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="101dp"
+            android:layout_marginEnd="102dp"
+            android:layout_marginBottom="36dp"
+            android:prompt="@string/hint_activity"
+            android:spinnerMode="dialog"
+            app:layout_constraintBottom_toTopOf="@+id/saveBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </Spinner>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
