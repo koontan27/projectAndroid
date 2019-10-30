@@ -41,4 +41,6 @@
     <string name="txtInsertFoodNameValue">ชื่ออาหาร</string>
     <string name="txtKcal">จำนวนแคลอรี่</string>
     <string name="saveBtnValue">บันทึก</string>
+    <string name="createdByTextView">Created By</string>
+    <string name="createNameTextView">Wasin Sombatboon 59160383</string>
 </resources>

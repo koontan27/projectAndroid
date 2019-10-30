@@ -3,6 +3,7 @@ package com.example.calcalculated
 
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -58,8 +59,14 @@ class inputFragment : Fragment() {
                 calWeight = calculateBMI(calbmi, calWeight)
                 var total = 0
                 total = calculateBMR(total, binding)
-
+                Log.i("total1",total.toString())
+                var all = 0;
                 Handler().postDelayed({
+                    all = calTotal(total, txtSpinerActivityValue)
+                    Log.i("total2", all.toString())
+                },200)
+                Handler().postDelayed({
+                    Log.i("total3",all.toString())
                     checkProfile.insert(
                         profile(
                             txtSpinerSexValue,
@@ -67,18 +74,37 @@ class inputFragment : Fragment() {
                             binding.weightEditText.text.toString().toDouble(),
                             binding.heightEditText.text.toString().toDouble(),
                             txtSpinerActivityValue,
-                            calbmi, calWeight, total
+                            calbmi, calWeight, all
                         )
                     )
                     Toast.makeText(getActivity(), "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_LONG).show()
                     view.findNavController().navigate(R.id.action_inputFragment_to_overViewFragment)
-                }, 200)
+                }, 600)
             } else {
                 Toast.makeText(getActivity(), "กรุณากรอกข้อมูลให้ครบทุกช่อง", Toast.LENGTH_LONG)
                     .show()
             }
-
         }
+    }
+
+    private fun calTotal(
+        total: Int,
+        txtspinner: String
+    ): Int {
+        var total1 = 0
+        Log.i("total4", txtspinner)
+        if (txtspinner == "ไม่ได้ออกกำลังกาย") {
+            total1 = (total * 1.2).toInt()
+        } else if (txtspinner == "ออกกำลังกาย 1-3 วัน/สัปดาห์") {
+            total1 = (total * 1.375).toInt()
+        } else if (txtspinner == "ออกกำลังกาย 3-5 วัน/สัปดาห์") {
+            total1 = (total * 1.55).toInt()
+        } else if (txtspinner == "ออกกำลังกาย 6-7 วัน/สัปดาห์") {
+            total1 = (total * 1.725).toInt()
+        } else {
+            total1 = (total * 1.9).toInt()
+        }
+        return total1
     }
 
     private fun calculateBMR(
@@ -126,6 +152,7 @@ class inputFragment : Fragment() {
                 calWeight = calculateBMI(calbmi, calWeight)
                 var total = 0
                 total = calculateBMR(total, binding)
+
                 Handler().postDelayed({
                     checkProfile.update(
                         profile(
@@ -146,6 +173,7 @@ class inputFragment : Fragment() {
             }
         }
     }
+
 
     private fun checkEmptyProfile(binding: FragmentInputBinding) {
         checkProfile.profileAlls.observe(this, Observer { item ->

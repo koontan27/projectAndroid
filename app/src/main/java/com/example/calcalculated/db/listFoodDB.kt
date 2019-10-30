@@ -22,7 +22,7 @@ abstract class listFoodDB : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     listFoodDB::class.java,
-                    "food_database"
+                    "new_food_database"
                 ).allowMainThreadQueries()
                     .build()
                 INSTANCE = instance

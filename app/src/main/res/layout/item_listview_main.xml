@@ -10,7 +10,7 @@
         android:id="@+id/txtFoodName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/roboto_thin"
@@ -25,7 +25,7 @@
         android:id="@+id/txtCal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="92dp"
         android:fontFamily="@font/roboto_thin"
         android:text="@string/txtCalValue"
         android:textColor="@android:color/black"
@@ -44,19 +44,5 @@
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/txtCal"
         app:layout_constraintStart_toEndOf="@+id/txtCal" />
-
-    <ImageButton
-        android:id="@+id/btnDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/txtDesDelete"
-        android:src="@android:drawable/ic_delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

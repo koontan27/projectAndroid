@@ -71,10 +71,12 @@ class mainFragment : Fragment() {
         Handler().postDelayed({
             Log.i("cal", allCal.toString())
             binding.txtCalOne.text = allCal.toString()
-            if (allCal - yourCal <= yourCal) {
-                binding.imageView.setImageResource(R.drawable.emo1)
-            } else {
+            if (yourCal - allCal <= 0) {
                 binding.imageView.setImageResource(R.drawable.emo2)
+                binding.txtEat3.text = "คุณกินเกินไป"
+            } else {
+                binding.imageView.setImageResource(R.drawable.emo1)
+                binding.txtEat3.text = "คุณยังกินได้อีก"
             }
             binding.txtCalThree.text = (yourCal - allCal).absoluteValue.toString()
         }, 200)
