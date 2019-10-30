@@ -43,4 +43,7 @@
     <string name="saveBtnValue">บันทึก</string>
     <string name="createdByTextView">Created By</string>
     <string name="createNameTextView">Wasin Sombatboon 59160383</string>
+    <string name="txtCountTitleValue">กรุณาใส่จำนวน</string>
+    <string name="hint_value">จำนวน</string>
+    <string name="btnSaveCountValue">บันทึก</string>
 </resources>

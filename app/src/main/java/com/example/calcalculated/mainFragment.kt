@@ -63,15 +63,14 @@ class mainFragment : Fragment() {
         Handler().postDelayed({
             foodSelected.listFoodAll.observe(this, Observer { item ->
                 item.forEach {
-                    allCal += it.kcalOfFood
+                    allCal += it.kcalOfFood * it.countOfFood
                 }
             })
-
         }, 200)
         Handler().postDelayed({
             Log.i("cal", allCal.toString())
             binding.txtCalOne.text = allCal.toString()
-            if (yourCal - allCal <= 0) {
+            if (yourCal - allCal < 0) {
                 binding.imageView.setImageResource(R.drawable.emo2)
                 binding.txtEat3.text = "คุณกินเกินไป"
             } else {

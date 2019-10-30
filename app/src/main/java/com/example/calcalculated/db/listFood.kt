@@ -18,12 +18,15 @@ data class listFood(
 
 @Entity(tableName = "list_selected_food")
 data class listFoodSelected(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
 
     @ColumnInfo(name = "foodName")
-    val foodName: String = "",
+    val foodName: String,
 
     @ColumnInfo(name = "kcal")
-    var kcalOfFood: Long = 0L
+    var kcalOfFood: Int,
+
+    @ColumnInfo(name = "count")
+    var countOfFood: Int
 
 )

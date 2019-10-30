@@ -6,10 +6,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.*
-import android.widget.ListView
+import android.widget.*
 import androidx.fragment.app.Fragment
-import android.widget.TextView
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -23,6 +21,7 @@ import com.example.calcalculated.db.listFoodSelected
 class foodFragment : Fragment() {
     private lateinit var foodModel: foodControllerModel
     private lateinit var foodSelected: listFoodSelectedControllerModel
+    var countFood = 0;
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -60,11 +59,46 @@ class foodFragment : Fragment() {
             })
         }, 200)
         binding.listFoodData.setOnItemClickListener { _, _, position, _ ->
-            foodSelected.insert(listFoodSelected(array[position].foodName, array[position].kcal))
-            Toast.makeText(activity, "นำเข้ารายการเรียบร้อย", Toast.LENGTH_LONG).show()
+            setDialog(array, position)
         }
     }
 
+    private fun setDialog(array: ArrayList<listFoodDataClass>, position: Int) {
+        val settingsDialog = Dialog(this.requireContext())
+        settingsDialog.setContentView(layoutInflater.inflate(R.layout.dialog_countfood, null))
+        var btnDialogSave = settingsDialog.findViewById<Button>(R.id.btnSaveCount)
+        var editDialog = settingsDialog.findViewById<EditText>(R.id.editTxtCountFood)
+
+        btnDialogSave.setOnClickListener {
+            if (editDialog.text.isNotEmpty()) {
+                if (editDialog.text.toString().matches("-?\\d+(\\.\\d+)?".toRegex())) {
+                    if (editDialog.text.toString().toInt() > 0) {
+                        countFood = editDialog.text.toString().toInt()
+                        settingsDialog.hide()
+                        Handler().postDelayed({
+                            foodSelected.insert(
+                                listFoodSelected(
+                                    array[position].foodName,
+                                    array[position].kcal,
+                                    countFood
+                                )
+                            )
+                            Toast.makeText(activity, "นำเข้ารายการเรียบร้อย", Toast.LENGTH_LONG)
+                                .show()
+                        }, 200)
+                    } else {
+                        Toast.makeText(activity, "กรุณาใส่จำนวนใหม่", Toast.LENGTH_LONG).show()
+                    }
+                } else {
+                    Toast.makeText(activity, "กรุณาใส่ตัวเลข", Toast.LENGTH_LONG).show()
+                }
+            } else {
+                Toast.makeText(activity, "กรุณากรอกจำนวน", Toast.LENGTH_LONG).show()
+            }
+        }
+        settingsDialog.show()
+
+    }
 
     private fun onAdd() {
         view?.findNavController()
