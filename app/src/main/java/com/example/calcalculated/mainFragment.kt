@@ -63,7 +63,7 @@ class mainFragment : Fragment() {
         Handler().postDelayed({
             foodSelected.listFoodAll.observe(this, Observer { item ->
                 item.forEach {
-                    allCal += it.kcalOfFood * it.countOfFood
+                    allCal += it.kcalOfFood
                 }
             })
         }, 200)

@@ -29,9 +29,9 @@ class CustomFoodListView(var context: Context?, var listfood: ArrayList<listFood
             view = convertView
             viewHolder = view.tag as ViewHolder
         }
-        var car:listFoodDataClass = getItem(position) as listFoodDataClass
-        viewHolder.txtName.text = car.foodName
-        viewHolder.txtCal.text = car.kcal.toString()
+        var food:listFoodDataClass = getItem(position) as listFoodDataClass
+        viewHolder.txtName.text = food.foodName
+        viewHolder.txtCal.text = food.kcal.toString()
         return view as View
 
     }

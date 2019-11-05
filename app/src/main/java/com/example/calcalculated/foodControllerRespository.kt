@@ -5,10 +5,10 @@ import com.example.calcalculated.db.*
 
 class foodControllerRespository(private val foodDAO: listFoodDAO) {
     val allFoods: LiveData<List<listFood>> = foodDAO.getAllFood()
-    fun insert(car: listFood) {
-        foodDAO.insert(car)
-    }
 
+    fun insert(food: listFood) {
+        foodDAO.insert(food)
+    }
     fun clear(item: String) {
         foodDAO.deleteByName(item)
     }

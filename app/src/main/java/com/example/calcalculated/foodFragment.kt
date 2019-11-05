@@ -75,11 +75,12 @@ class foodFragment : Fragment() {
                     if (editDialog.text.toString().toInt() > 0) {
                         countFood = editDialog.text.toString().toInt()
                         settingsDialog.hide()
+                        val countKcal =array[position].kcal * countFood
                         Handler().postDelayed({
                             foodSelected.insert(
                                 listFoodSelected(
                                     array[position].foodName,
-                                    array[position].kcal,
+                                    countKcal,
                                     countFood
                                 )
                             )

@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = arrayOf(listFood::class), version = 1, exportSchema = false)
+@Database(entities = [listFood::class], version = 1, exportSchema = false)
 abstract class listFoodDB : RoomDatabase() {
 
     abstract fun listFoodDAO(): listFoodDAO
@@ -49,7 +49,7 @@ abstract class listFoodSelectedDB : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     listFoodSelectedDB::class.java,
-                    "list_food_database"
+                    "list_v2_food_database"
                 ).allowMainThreadQueries()
                     .build()
                 INSTANCE = instance
